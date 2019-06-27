@@ -24,7 +24,7 @@ datafine=dt.datetime.strptime(sys.argv[2],'%Y-%m-%d %H:%M')
 # select query
 Query="Select IDsensore,DataFine,DataInizio,AggregazioneTemporale from A_Sensori join A_Stazioni on A_Sensori.IDstazione=A_Stazioni.IDstazione where IDrete in (1,2,4) and NOMEtipologia = 'PP' and DataFine is NULL;"
 # connessione al dB e acquisizione elenco sensori pluvio
-conn=pymysql.connect(host='10.10.0.6', user='guardone', password='guardone',db='METEO')
+conn=pymysql.connect(host='10.10.0.6', user='********', password='********',db='METEO')
 df_sensori=pd.read_sql(Query, conn)
 # preparazione frammento JSON
 url='http://10.10.0.15:9099'
